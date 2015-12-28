@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd 
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.f2c.api,com.f2c.controller" />
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<context:annotation-config />
+
+	<bean id="defaultAnnotationHandlerMapping"
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+	<!-- 配置多请求数据类型，如json xml -->
+
+	<bean id="annotationMethodHandlerAdapter"
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- 解析json请求数据，将json转换为java对象 -->
+				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+				<!--可以增加其他数据类型,请参考spring的API -->
+			</list>
+		</property>
+	</bean>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultContentType" value="application/json" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="action" value="text/html" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="viewClass"
+						value="org.springframework.web.servlet.view.JstlView" />
+					<property name="prefix" value="/" />
+					<property name="suffix" value=".jsp" />
+				</bean>
+
+				<!-- 可加入其他视图技术如 volacity jstl等 -->
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<!-- 输出为JSON数据 -->
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+
+		<property name="defaultErrorView" value="/commons/error" />
+		<property name="exceptionMappings">
+			<props>
+			</props>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*reset*/
+html{background: none repeat scroll 0 0;color: #333;overflow-y: scroll;}
+body, div, td{font-size: 12px;font-family: verdana;line-height: 1.4em; font-family:'MicroSoft YaHei','Simsun',Helvetica,LucidaGrande,Tahoma,verdana,Arial,sans-serif;}
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, th, td, dl, dt, dd{margin: 0;padding: 0;}
+table{border-collapse: collapse;border-spacing: 0;}
+img{border:none;}
+address, caption, cite, code, dfn, em, th, var{font-style: normal;font-weight: normal;}
+ul li{list-style-image: none;list-style-position: outside;list-style-type: none;}
+caption, th{text-align: left;}
+h1, h2, h3, h4, h5, h6{font-size: 100%;font-weight: normal;vertical-align: baseline;zoom: 1;}
+input, textarea, select, button{font-family: Verdana;font-size: 12px;font-weight: inherit; vertical-align:middle}
+button{border: medium none;}
+textarea{ resize:none } 
+input[type=radio], input[type=checkbox]{vertical-align: middle;}
+/*base*/
+a{text-decoration:none;}
+a:focus{outline-style: none;outline-width: 0;}
+a:link, a:visited, a:active{text-decoration: none;}
+a:hover{text-decoration: underline;}
+.commonpadding{padding: 4px;}
+.number{color: #999;font-family: Arial;font-size: 12px;_vertical-align:text-top;}
+.datetime{color: #999;}
+.options{float: right;display: block;}
+.error{color: red;}strong{font-weight: bold;}
+.floatleft{float: left;}
+.floatright{float: right;}
+.aligncenter{text-align: center;}
+.alignright{text-align: right;}
+.alignleft{text-align: left;}
+.block{display: block;}
+.inlineblock{display:inline-block;}
+.gray{color: #999;}
+.gray-d{color:#666;}
+.red{color:#D03737;}
+.orange{color:#EF4E2C;}
+.forcewrap{word-wrap: break-word;word-break:break-all;text-overflow: hidden;overflow: hidden;}
+.borderless{border: none;}
+label.checkbox, label.radio, label.text{padding-left: 4px;vertical-align: top;}
+/*clear*/
+.clear{clear:both;line-height: 0;height:0;font-size:0;}
+.clearfix:after {content: ".";display: block;height:0;clear: both;visibility: hidden}
+.clearfix {zoom:1}
+.noimg{background-image:none!important;}
+
+.noborder,.noborder_left,.noborder_right,.noborder_top,.noborder_bottom{border:0px!important;}
+.bold{font-weight:bold;}
+.position{position:relative;}
+/*structure*/
+.b-star,.like,.f,.invite a,a.add,.search input.search_btn,.contacts li span.remove a,.txt_box .txt b,.btn_send,.btn_ok,a.a_send,span.icon_m2you,span.add,span.sign,.contacts li span.editorname a,.btn_add,.btn_cancel{background:url(../images/img_bg.png) no-repeat;}
+
+#maincolumn{width:760px;height:536px; margin:0 auto;}
+.m2you{height:101px; background:url(../images/bg_pic.jpg) no-repeat;}
+.starbox{border:1px solid #d6d6d6; zoom:1; background:url(../images/star_bg.gif) repeat-x left bottom;margin-top:15px;}
+.starbox .cm{height:269px; background:url(../images/banner.jpg) no-repeat;}
+.starbox p.star{padding-top:17px; text-align:center;}
+.b-star{width:247px; height:48px; display:inline-block;background-position:left top; }
+.m2youtext{margin:80px 20px 20px 20px; zoom:1; line-height:18px; background:url(../images/logo.png) no-repeat right bottom; color:#666;}
+.likebox{padding-top:26px; zoom:1; line-height:22px;}
+.like{width:51px; height:23px; display:inline-block; margin-right:7px;background-position:0 -48px;}
+.like:hover{text-decoration:none;}
+.f{width:12px; height:12px; display:inline-block; margin-right:7px;background-position:0 -71px; margin-top:6px;}
+.thankbox{width:373px; border:1px solid #bdbcbd; padding:25px 35px; margin:58px auto 0 auto; background:url(../images/bg_2.gif) repeat-x left bottom;}
+.thankbox p.title{line-height:32px;margin-bottom:25px;}
+.thankbox p.title img{margin-right:8px;}
+.thankbox p{font-size:14px;font-weight:bold;}
+.thankbox p.f20{font-size:20px;color:#1fa200; margin:10px 0;}
+.thankbox p.gray{font-weight:normal;font-size:12px;}
+a.a_send{width:174px; height:35px; background-position:0 -211px; display:block; margin:25px 0 0 100px;}
+
+/* contacts */
+.f10{font-size:10px;}
+.user_box{width:185px; float:left;padding-right:8px;display:inline;}
+.namebox{margin-bottom:10px;}
+.namebox img{width:50px; height:50px; float:left; display:inline;}
+.namebox .txt{margin-left:55px;padding-top:6px;}
+.namebox a{color:#369}
+.sevs{margin-bottom:15px;}
+.sevs p{height:20px; margin-bottom:6px; line-height:20px;padding-left:6px;}
+.sevs p img{width:16px; height:16px;vertical-align:middle; margin-right:5px; position:relative; top:-1px;*+top:0;}
+.sevs p a:hover{text-decoration:none;}
+.sevs p:hover{background:#d8dfea;}
+.sevs a{color:#333;}
+.invite{padding-left:6px;}
+.invite a{width:138px; height:20px; display:block; background-position:0 -83px;}
+
+.embed_box{width:156px; height:140px; border:#dadada solid 1px; background:#f2f2f2; margin-left:6px;margin-top:44px;}
+
+.contacts{width:238px;padding:5px;padding-top:15px;border:#dadada solid 1px; background:#f2f2f2; float:left;}
+.contacts .hd{margin-bottom:5px;height:18px; line-height:18px;}
+.contacts .hd h2{margin-right:60px;font-size:18px;float:left;color:#333;}
+a.add{width:51px; height:18px; display:block; background-position:0 -103px;}
+.contacts .hd a.add{float:right;}
+.contacts .list{padding:1px;border:#dadada solid 1px; background:#fff;}
+.contacts .list ul{height:452px;padding-top:5px;overflow-y:scroll; }
+.loading{background:url(../images/ajax-loader.gif) no-repeat center 9px;}
+.loading li{display:none}
+.search{margin:1px 1px 5px 1px;height:23px;}
+.search input.i-n{width:193px; height:21px;padding:0 5px;border:#ccc solid 1px; float:left; line-height:21px;color:#b4b4b4}
+.search input.search_btn{width:27px; height:23px; float:left; background-position:0 -121px;border:0;}
+.contacts li{height:20px;margin-bottom:10px;line-height:20px;color:#666;cursor:pointer;}
+.contacts li span{display:block;float:left;text-indent:6px;}
+.contacts li span.name{width:30%;}
+.contacts li span.phone{width:60%;}
+.contacts li span.editorname{width:10%;}
+.contacts li span.editorname a{display:none;}
+
+.contacts li:hover {background:#D8DFEA;}
+.contacts li.new{background:#FF6600;color:#FFF}
+.contacts li.current{background:#627AAD;color:#FFF;}
+.contacts li:hover span.editorname a, .contacts li.editing span.editorname a{width:16px; height:16px; background-position:-50px -260px;display:block; margin-top:2px;}
+
+#feedListContainer{height:345px}
+.mail_box{width:308px;padding-top:39px; border:#dadada solid 1px;background:url(../images/bg_pic-2.jpg) no-repeat top; float:right;}
+.txt_box{height:333px;padding:10px 10px 0;background:#fff;border-top:#ccc solid 1px;border-bottom:#ccc solid 1px;position:relative;overflow-y:scroll;}
+.txt_box .txt{border-width:1px; border-style:solid;padding:5px; position:relative;width:237px;min-height:20px;_height:20px; margin-bottom:10px; color:#333;}
+.txt_box .txt b{font-size:0;line-height:0;width:7px; height:7px; display:block;position:absolute;bottom:4px;}
+.txt_box .in{border-color:#ddbc92;background:url(../images/bg_txt_sending.png) repeat-x bottom #fff8eb; float:left}
+.txt_box .in b{left:-7px;background-position:-14px -179px;}
+.txt_box .out{border-color:#b5d5b7; background:url(../images/bg_txt_out.png) repeat-x bottom #f4ffeb; float:right}
+.txt_box .out b{right:-7px;background-position:-7px -179px;}
+.txt_box .sending{border-color:#ddbc92;background:url(../images/bg_txt_sending.png) repeat-x bottom #fff8eb; float:right}
+.txt_box .sending b{right:-7px;background-position:-21px -179px;} 
+.txt_box .history{display:none;color:#AAA;text-align:center;padding-top:10px;border-bottom:1px solid #ddd;margin-bottom:10px;cursor:pointer}
+.txt_box .history:hover {color:#333;}
+.editor_box{padding:10px; background:#f2f2f2;}
+.editor_box textarea{width:276px; height:57px; border:#ccc solid 1px;padding:5px;}
+.editor_box textarea.focus{border:#2276bb solid 1px;}
+.editor_box .op{margin-top:5px;height:35px;}
+.editor_box .op .btn_send{width:92px; height:35px; background-position:0 -144px; border:0; float:right;cursor:pointer;}
+.editor_box .op p{float:right;padding-right:10px; color:#369;line-height:35px;font-weight:bold;}
+.editor_box h3{line-height:20px;color:#AAA}
+.editor_box h3 span{color:#333}
+
+.signature{width:274px;padding:10px 2px; float:left;}
+.signature h2{font-size:18px; line-height:22px;}
+.signature p{color:#999;margin-top:10px;}
+.signature textarea{width:258px; height:57px;padding:5px; border:#ccc solid 1px;margin-top:10px;}
+.signature textarea.focus{border:#2276bb solid 1px;}
+.btn_ok{width:61px; height:25px; background-position:0 -186px;border:0;margin-top:10px;cursor:pointer;}
+
+span.icon_m2you,span.add,span.sign{width:13px; height:11px;margin-right:3px; display:inline-block;}
+span.icon_m2you{background-position:0 -260px;}
+span.add{background-position:-16px -260px;}
+span.sign{background-position:-32px -260px;}
+
+/* layer_add */
+.layer_add{width:182px;margin:10px;}
+.layer_add input.i-n{width:172px; padding:4px; border:#ccc solid 1px;}
+.layer_add h2{margin-bottom:5px;font-weight:bold;}
+.layer_add p{margin-bottom:10px;}
+.btn_add,.btn_cancel{width:60px; height:24px; display:inline-block;}
+.btn_add{background-position:-95px -144px; margin:0 5px 0 57px;}
+.btn_cancel{background-position:-54px -103px;}
+
